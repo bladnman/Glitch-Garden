@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defender : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Defender : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  [SerializeField] int cost = 50;
+
+  public int GetStarCost() {
+    return cost;
+  }
+
+  public void AddStars(int amount) {
+    var starDisplay = FindObjectOfType<StarDisplay>();
+    starDisplay.AddStars(amount);
+  }
 }

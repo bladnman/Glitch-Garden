@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 357736703093789518}
   - component: {fileID: 8900548458729627675}
   - component: {fileID: 73927005342465236}
-  - component: {fileID: 8550884273235294784}
   - component: {fileID: 896215628}
-  - component: {fileID: 896215629}
+  - component: {fileID: 4998608915640182191}
   m_Layer: 0
   m_Name: Zucchini
   m_TagString: Untagged
@@ -98,21 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ca7a3dad933433ca5af2878191813f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 1
---- !u!114 &8550884273235294784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654331993734483703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 106be737f5ae84032948b67108f90ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
+  speed: 8
+  damage: 10
 --- !u!50 &896215628
 Rigidbody2D:
   serializedVersion: 4
@@ -134,8 +120,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &896215629
-CircleCollider2D:
+--- !u!61 &4998608915640182191
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,6 +133,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026487231, y: 0}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.56, y: 0.56}
+    newSize: {x: 0.56, y: 0.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.16937673
+  m_Size: {x: 0.56, y: 0.56}
+  m_EdgeRadius: 0
