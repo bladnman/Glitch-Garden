@@ -9,10 +9,13 @@ public class Shooter : MonoBehaviour {
 
   AttackerSpawner laneSpawner;
   Animator animator;
+  GameObject projectileParent;
+  const string PROJECTILE_PARENT_NAME = "Projectiles";
 
   private void Start() {
     animator = GetComponent<Animator>();
     laneSpawner = GetLaneSpawner();
+    CreateProjectileParent();
   }
   private void Update() {
     if (IsAttackerInLane()) {
@@ -21,6 +24,12 @@ public class Shooter : MonoBehaviour {
     } else {
       // idle animation
       animator.SetBool("isAttacking", false);
+    }
+  }
+  private void CreateProjectileParent() {
+    projectileParent = GameObject.Find(PROJECTILE_PARENT_NAME);
+    if (!projectileParent) {
+      projectileParent = new GameObject(PROJECTILE_PARENT_NAME);
     }
   }
   private AttackerSpawner GetLaneSpawner() {
@@ -41,7 +50,7 @@ public class Shooter : MonoBehaviour {
   public void Fire() {
     Vector2 launchPosition = gun != null ? gun.transform.position : transform.position;
     var item = Instantiate(projectile, launchPosition, Quaternion.identity);
-    item.transform.parent = transform;
+    item.transform.parent = projectileParent.transform;
   }
 
 }
